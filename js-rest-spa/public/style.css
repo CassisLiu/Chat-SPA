@@ -1,0 +1,35 @@
+input {
+    border: 2px solid slategray;
+    border-radius: 4px;
+}
+
+.amount {
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+}
+
+.items {
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.status {
+    color: red;
+    padding-top: 10px;
+}
+
+.display-panel {
+    width: 40%;
+    padding-top: 50px;
+    padding-left: 40%;
+    text-align: center;
+    visibility: hidden;
+}
+
+.logout-panel {
+    width: 40%;
+    padding-top: 35px;
+    padding-left: 60%;
+    visibility: hidden;
+}

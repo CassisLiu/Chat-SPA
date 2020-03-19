@@ -37,7 +37,11 @@ app.post('/session', (req, res) => {
     models.users[uid] = { "username":username, "message":message};
     res.cookie('uid',uid);
     res.json(message);
-})
+});
+
+app.get('/users', (req, res) => {
+    const uid = req.cookies.uid;
+});
 
 app.get('/message', (req, res) => {
     const uid = req.cookies.uid;

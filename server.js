@@ -9,16 +9,16 @@ app.use(express.static('./public'));
 app.use(express.json());
 app.use(cookieParser());
 
-
+// Check login
 app.get('/session', (req, res) => {
     let uid = req.cookie.uid; 
     if(!uid) {
-        res.status(401).json({error: 'provide-error'});
+        res.status(401).json({code: 'provide-error'});
         return ;
     }
     if(!models.users[uid]) {
         req.clearCookie('uid');
-        res.status(403).json( {error: 'provide-error'});
+        res.status(403).json( {code: 'provide-error'});
         return ;
     }
     res.sendStatus(200);
@@ -41,13 +41,16 @@ app.post('/session', (req, res) => {
 
 app.get('/users', (req, res) => {
     const uid = req.cookies.uid;
+
+    // todos: get user list 
 });
 
+// Load message list 
 app.get('/message', (req, res) => {
     const uid = req.cookies.uid;
     checkUID(uid,res);
 
-    res.json(models.users[uid].message);
+    res.json(Object.values(models.message));
 });
 
 
@@ -67,4 +70,4 @@ function checkUID(uid, res) {
     }
 }
 
-app.listern(3000, console.log("Running"));
+app.listen(3000, console.log("Running"));

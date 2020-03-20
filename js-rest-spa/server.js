@@ -97,7 +97,6 @@ app.put('/item/:id', (req, res) => {
     const id = req.params.id;
     const amount = req.body.amount;
     items[id].amount = amount;
-    console.log("New amount:" + amount+ ", updated value:" + items[id].amount);
     res.json(Object.values(items));
 })
 

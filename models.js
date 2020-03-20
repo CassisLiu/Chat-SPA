@@ -1,5 +1,9 @@
 const users = {};
-const message = {};
+const message = {"jack": {
+    messageBody:"Hello there!",
+    username:"jack",
+    time: new Date(),
+}};
 
 module.exports = {
     users,

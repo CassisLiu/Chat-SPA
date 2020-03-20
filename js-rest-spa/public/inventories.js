@@ -49,7 +49,6 @@
             })
         } else if (e.target.classList.contains('update')) {
             const updatedAmout = document.querySelector('.amount');
-            console.log("ddd");
             const id = e.target.dataset.id;
             fetch(`/item/${id}`, {
                 method: 'PUT',
@@ -59,6 +58,7 @@
             .catch( err => {
                 updateStatus(errMessage[err.error] || err.error);
             })
+            .then( convertError )
             .then(items => renderItems(items));
         }  
 

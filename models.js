@@ -1,11 +1,8 @@
-const users = {};
-const message = {"jack": {
-    messageBody:"Hello there!",
-    username:"jack",
+const message = [
+  {content: 'Hello there!',
+    username: 'jack',
     time: new Date(),
-}};
+  }];
 
-module.exports = {
-    users,
-    message,
-};
+const users = {};
+module.exports = {message, users};
